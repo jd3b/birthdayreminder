@@ -5,5 +5,6 @@ namespace BirthdayReminder.RepositoryLayer
     public interface IFriendRL
     {
         public Task<CreateFriendResponse> CreateFriend(CreateFriendRequest request);
+        public Task<ReadFriendsResponse> ReadFriends();
     }
 }

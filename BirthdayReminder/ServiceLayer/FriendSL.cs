@@ -15,5 +15,9 @@ namespace BirthdayReminder.ServiceLayer
         {
             return await _friendRL.CreateFriend(request);
         }
+        public async Task<ReadFriendsResponse> ReadFriends()
+        {
+            return await _friendRL.ReadFriends();
+        }
     }
 }

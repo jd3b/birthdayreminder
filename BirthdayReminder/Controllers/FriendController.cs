@@ -31,6 +31,24 @@ namespace BirthdayReminder.Controllers
             return Ok(response);
         }
 
+        [HttpGet]
+        [Route("ReadFriends")]
+        public async Task<IActionResult> ReadFriends()
+        {
+            ReadFriendsResponse response = null;
+            try
+            {
 
+                response = await _friendSL.ReadFriends();
+
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccess = false;
+                response.Message = "Exception Message : " + ex.Message;
+            }
+
+            return Ok(response);
+        }
     }
 }
