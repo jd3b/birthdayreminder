@@ -19,5 +19,9 @@ namespace BirthdayReminder.ServiceLayer
         {
             return await _friendRL.ReadFriends();
         }
+        public async Task<DeleteFriendResponse> DeleteFriend(DeleteFriendRequest request)
+        {
+            return await _friendRL.DeleteFriend(request);
+        }
     }
 }

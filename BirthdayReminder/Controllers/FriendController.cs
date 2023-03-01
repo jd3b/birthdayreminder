@@ -50,5 +50,24 @@ namespace BirthdayReminder.Controllers
 
             return Ok(response);
         }
+        [HttpPost]
+        [Route("DeleteFriend")]
+        public async Task<IActionResult> DeleteFriend(DeleteFriendRequest request)
+        {
+            DeleteFriendResponse response = null;
+            try
+            {
+
+                response = await _friendSL.DeleteFriend(request);
+
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccess = false;
+                response.Message = "Exception Message : " + ex.Message;
+            }
+
+            return Ok(response);
+        }
     }
 }
